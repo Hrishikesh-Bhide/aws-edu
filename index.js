@@ -11,6 +11,8 @@ let awsConfig = {
     "endpoint": "http://dynamodb.us-east-2.amazonaws.com",
     "accessKeyId": "AKIAUOGEXETFCIM2NIXO", "secretAccessKey": "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"
 };
+var math_arr = [];
+
 
 function sortUsers(data) {
   var arr = []
@@ -27,11 +29,39 @@ app.get('/', (req, res) => {
   res.render('add');
 })
 
+app.get('/Math', (req, res) => {
+  res.render('mathquiz');
+})
+
 app.get('/Add', (req, res) => {
   res.render('add');
 });
 
 app.get('/Home', (req, res) => {
+  res.render('home');
+});
+
+app.post('/Update', (req, res) => {
+  AWS.config.update(awsConfig);
+  let docClient = new AWS.DynamoDB.DocumentClient();
+
+  var input = {
+    "Username": "Hrishikesh", "Password": "Bhide", "Score": 3
+  };
+  var params = {
+    TableName: "Users",
+    Item:  input
+  };
+  docClient.put(params, function (err, data) {
+  if (err) {
+      console.log("Addition failed " + JSON.stringify(err, null, 2));                      
+  } else {
+      console.log("User updated!" );                      
+  }
+});
+
+
+  console.log(req.body.scoreq);
   res.render('home');
 });
 

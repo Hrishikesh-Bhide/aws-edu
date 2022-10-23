@@ -1,0 +1,156 @@
+<html>
+    <head>
+        <style>
+            .logdiv {
+                margin-top:120px;
+                width: 50%;
+            }
+            .div2 {
+                margin-top:35px;
+                width: 50%;
+            }
+            input[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+            .button {
+  background-color: #F4C6AD; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  color: black; 
+}
+        </style>
+
+<script>
+    function checkScores(){
+        var sc = 0;
+    if(document.getElementById('scorew').checked) {
+    sc += 1;
+   }if(document.getElementById('q2-radio-choice-3').checked) {
+    sc += 1;
+   
+}if(document.getElementById('q2-radio-choice-1').checked) {
+    sc += 1;
+   
+}if(document.getElementById('q2-radio-choice-3').checked) {
+    sc += 1;
+   
+}if(document.getElementById('q2-radio-choice-2').checked) {
+    sc += 1;
+   }
+   window.alert("You scored " +sc+ " point(s)!");
+
+   document.getElementById('scoreq').value = new Number(sc);
+
+}
+    
+</script>
+
+
+    </head>
+<body bgcolor="FCFFE9">
+    <div>
+        <center>
+            <h2>Welcome to Game Based Learning on AWS!!</h2>
+            
+                <form action="/Update" method="post">
+                    <div class="logdiv">
+                        <h3>Welcome to your Math Quiz!</h3>
+                    </div>
+                    <div data-role="fieldcontain" class="div2">
+                        <fieldset data-role="controlgroup">
+                            <legend>What is 10 % 3:</legend>
+                                 <input type="radio" name="scoreq" id="scoreq" value="scoreq" checked="checked" />
+                                 <label for="scoreq">0</label>
+                    
+                                 <input type="radio" name="scoreq" id="scorew" value="scorew"  />
+                                 <label for="scorew">1</label>
+                    
+                                 <input type="radio" name="scoreq" id="scoree" value="scoree"  />
+                                 <label for="scoree">2</label>
+                    
+                                 <input type="radio" name="scoreq" id="scorer" value="scorer"  />
+                                 <label for="scorer">3</label>
+                        </fieldset>
+                    </div>
+                    <div data-role="fieldcontain" class="div2">
+                        <fieldset data-role="controlgroup">
+                            <legend>What is 49 / 7:</legend>
+                                 <input type="radio" name="q2-radio-choice-1" id="q2-radio-choice-1" value="q2-radio-choice-1" checked="checked" />
+                                 <label for="q2-radio-choice-0">0</label>
+                    
+                                 <input type="radio" name="q2-radio-choice-1" id="q2-radio-choice-2" value="q2-radio-choice-2"  />
+                                 <label for="q2-radio-choice-2">1</label>
+                    
+                                 <input type="radio" name="q2-radio-choice-1" id="q2-radio-choice-3" value="q2-radio-choice-3"  />
+                                 <label for="q2-radio-choice-3">7</label>
+                    
+                                 <input type="radio" name="q2-radio-choice-1" id="q2-radio-choice-4" value="q2-radio-choice-4"  />
+                                 <label for="q2-radio-choice-4">49</label>
+                        </fieldset>
+                    </div>
+                    <div data-role="fieldcontain" class="div2">
+                        <fieldset data-role="controlgroup">
+                            <legend>What is 121 + 456:</legend>
+                                 <input type="radio" name="q3-radio-choice-1" id="q3-radio-choice-1" value="q3-radio-choice-1" checked="checked" />
+                                 <label for="q3-radio-choice-1">577</label>
+                    
+                                 <input type="radio" name="q3-radio-choice-1" id="q3-radio-choice-2" value="q3-radio-choice-2"  />
+                                 <label for="q3-radio-choice-2">578</label>
+                    
+                                 <input type="radio" name="q3-radio-choice-1" id="q3-radio-choice-3" value="q3-radio-choice-3"  />
+                                 <label for="q3-radio-choice-3">579</label>
+                    
+                                 <input type="radio" name="q3-radio-choice-1" id="q3-radio-choice-4" value="q3-radio-choice-4"  />
+                                 <label for="q3-radio-choice-4">576</label>
+                        </fieldset>
+                    </div>
+                    <div data-role="fieldcontain" class="div2">
+                        <fieldset data-role="controlgroup">
+                            <legend>What is 5 percent of 100:</legend>
+                                 <input type="radio" name="q4-radio-choice-1" id="q4-radio-choice-1" value="q4-radio-choice-1" checked="checked" />
+                                 <label for="q4-radio-choice-1">5</label>
+                    
+                                 <input type="radio" name="q4-radio-choice-1" id="q4-radio-choice-2" value="q4-radio-choice-2"  />
+                                 <label for="q4-radio-choice-2">50</label>
+                    
+                                 <input type="radio" name="q4-radio-choice-1" id="q4-radio-choice-3" value="q4-radio-choice-3"  />
+                                 <label for="q4-radio-choice-3">20</label>
+                    
+                                 <input type="radio" name="q4-radio-choice-1" id="q4-radio-choice-4" value="q4-radio-choice-4"  />
+                                 <label for="q4-radio-choice-4">0</label>
+                        </fieldset>
+                    </div>
+                    <div data-role="fieldcontain" class="div2">
+                        <fieldset data-role="controlgroup">
+                            <legend>What is 11 * 11:</legend>
+                                 <input type="radio" name="q5-radio-choice-1" id="q5-radio-choice-1" value="q5-radio-choice-1" checked="checked" />
+                                 <label for="q5-radio-choice-1">120</label>
+                    
+                                 <input type="radio" name="q5-radio-choice-1" id="q5-radio-choice-2" value="q5-radio-choice-2"  />
+                                 <label for="q5-radio-choice-2">121</label>
+                    
+                                 <input type="radio" name="q5-radio-choice-1" id="q5-radio-choice-3" value="q5-radio-choice-3"  />
+                                 <label for="q5-radio-choice-3">22</label>
+                    
+                                 <input type="radio" name="q5-radio-choice-1" id="q5-radio-choice-4" value="q5-radio-choice-4"  />
+                                 <label for="q5-radio-choice-4">222</label>
+                        </fieldset>
+                    </div>
+                    <div class="div2">
+                        <input class="button" type="submit" value="Submit" onclick="checkScores();">
+                    </div>
+                </form>    
+        </center>
+    </div>
+</body>
+</html> 
