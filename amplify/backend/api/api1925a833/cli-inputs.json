@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/login/{userId}": {
+      "name": "/login/{userId}",
+      "lambdaFunction": "authentication",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

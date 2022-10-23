@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gamebasedlearning-dev-213238-authRole",
+      "UnauthRoleArn": "arn:aws:iam::305355236554:role/amplify-gamebasedlearning-dev-213238-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::305355236554:role/amplify-gamebasedlearning-dev-213238-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-gamebasedlearning-dev-213238-deployment",
+      "UnauthRoleName": "amplify-gamebasedlearning-dev-213238-unauthRole",
+      "StackName": "amplify-gamebasedlearning-dev-213238",
+      "StackId": "arn:aws:cloudformation:us-east-1:305355236554:stack/amplify-gamebasedlearning-dev-213238/920abcc0-5272-11ed-a406-12f9d8ec3d85",
+      "AmplifyAppId": "d14slwka1xl0cj"
+    },
+    "categories": {
+      "function": {
+        "authentication": {}
+      }
+    }
+  }
+}
