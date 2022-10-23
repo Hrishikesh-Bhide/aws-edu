@@ -4,6 +4,7 @@ const port = 3000
 var AWS = require("aws-sdk");
 var bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
+var main_arr = [];
 app.use(bodyParser.urlencoded({ extended: false }))
 let awsConfig = {
     "region": "us-east-2",
@@ -30,6 +31,10 @@ app.get('/Add', (req, res) => {
   res.render('add');
 });
 
+app.get('/Home', (req, res) => {
+  res.render('home');
+});
+
 app.get('/Users', (req, res) => {
   AWS.config.update(awsConfig);
   let docClient = new AWS.DynamoDB.DocumentClient();
@@ -38,8 +43,8 @@ app.get('/Users', (req, res) => {
       console.log("Failed to get data!" + JSON.stringify(err, null, 2));
   }
   else {
-      sortUsers(data);
-      res.send(sortUsers(data));
+      main_arr = sortUsers(data);
+      res.render('Users', {main_arr});
   }
 })  
 })
@@ -61,7 +66,7 @@ app.post('/Add2', (req, res, next) => {
       console.log("User added!" );                      
   }
 });
-  res.send("Submitted");
+  res.render('home');
 });
 
 app.listen(port, () => {
