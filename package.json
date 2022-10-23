@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Hrishikesh-Bhide/aws-edu/issues"
   },
-  "homepage": "https://github.com/Hrishikesh-Bhide/aws-edu#readme"
+  "homepage": "https://github.com/Hrishikesh-Bhide/aws-edu#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
