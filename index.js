@@ -24,7 +24,7 @@ function sortUsers(data) {
 }
 
 app.get('/', (req, res) => {
-  res.send("Hello World")
+  res.render('add');
 })
 
 app.get('/Add', (req, res) => {
