@@ -7,20 +7,20 @@ app.set('view engine', 'ejs');
 var main_arr = [];
 app.use(bodyParser.urlencoded({ extended: false }))
 let awsConfig = {
-    "region": "us-east-2",
-    "endpoint": "http://dynamodb.us-east-2.amazonaws.com",
-    "accessKeyId": "AKIAUOGEXETFCIM2NIXO", "secretAccessKey": "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"
+  "region": "us-east-2",
+  "endpoint": "http://dynamodb.us-east-2.amazonaws.com",
+  "accessKeyId": "AKIAUOGEXETFCIM2NIXO", "secretAccessKey": "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"
 };
 var math_arr = [];
 
 
 function sortUsers(data) {
   var arr = []
-  for(var i in data.Items){
+  for (var i in data.Items) {
     arr.push(data.Items[i]);
   }
-  arr.sort(function(a, b){
-      return a.Score - b.Score;
+  arr.sort(function (a, b) {
+    return a.Score - b.Score;
   });
   return arr.reverse();
 }
@@ -31,6 +31,10 @@ app.get('/', (req, res) => {
 
 app.get('/Math', (req, res) => {
   res.render('mathquiz');
+})
+
+app.get('/Geo', (req, res) => {
+  res.render('geoquiz');
 })
 
 app.get('/Add', (req, res) => {
@@ -46,37 +50,34 @@ app.post('/Update', (req, res) => {
   let docClient = new AWS.DynamoDB.DocumentClient();
 
   var input = {
-    "Username": "Hrishikesh", "Password": "Bhide", "Score": 3
+    "Username": "Hrishikesh", "Password": "Bhide", "Score": req.body.fname
   };
   var params = {
     TableName: "Users",
-    Item:  input
+    Item: input
   };
   docClient.put(params, function (err, data) {
-  if (err) {
-      console.log("Addition failed " + JSON.stringify(err, null, 2));                      
-  } else {
-      console.log("User updated!" );                      
-  }
-});
-
-
-  console.log(req.body.scoreq);
+    if (err) {
+      console.log("Addition failed " + JSON.stringify(err, null, 2));
+    } else {
+      console.log("Score updated!");
+    }
+  });
   res.render('home');
 });
 
 app.get('/Users', (req, res) => {
   AWS.config.update(awsConfig);
   let docClient = new AWS.DynamoDB.DocumentClient();
-  docClient.scan(params = {TableName: "Users"}, function (err, data) {
-  if (err) {
+  docClient.scan(params = { TableName: "Users" }, function (err, data) {
+    if (err) {
       console.log("Failed to get data!" + JSON.stringify(err, null, 2));
-  }
-  else {
+    }
+    else {
       main_arr = sortUsers(data);
-      res.render('Users', {main_arr});
-  }
-})  
+      res.render('Users', { main_arr });
+    }
+  })
 })
 
 app.post('/Add2', (req, res, next) => {
@@ -87,15 +88,15 @@ app.post('/Add2', (req, res, next) => {
   };
   var params = {
     TableName: "Users",
-    Item:  input
+    Item: input
   };
   docClient.put(params, function (err, data) {
-  if (err) {
-      console.log("Addition failed " + JSON.stringify(err, null, 2));                      
-  } else {
-      console.log("User added!" );                      
-  }
-});
+    if (err) {
+      console.log("Addition failed " + JSON.stringify(err, null, 2));
+    } else {
+      console.log("User added!");
+    }
+  });
   res.render('home');
 });
 
