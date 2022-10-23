@@ -2,11 +2,11 @@
     <head>
         <style>
             .logdiv {
-                margin-top:115px;
+                margin-top:120px;
                 width: 50%;
             }
             .div2 {
-                margin-top:20px;
+                margin-top:40px;
                 width: 50%;
             }
             .button {
@@ -28,22 +28,25 @@
         <center>
             <h2>Welcome to Game Based Learning on AWS!!</h2>
             
-                <form action="/Add2" method="post">
+                
                     <div class="logdiv">
-                        <h3>Login</h3>
+                        <h3>What would you like to do?</h3>
                     </div>
                     <div class="div2">
-                        <label for="fname">Username  :</label>
-                        <input type="text" id="fname" name="fname"><br><br>
+                        <form action="/Users" method="get">
+                            <input class="button" type="submit" value="Math Quiz">
+                        </form>
                     </div>
                     <div class="div2">
-                        <label for="lname">Password  :</label>
-                        <input type="text" id="lname" name="lname"><br><br>
+                        <form action="/Users" method="get">
+                            <input class="button" type="submit" value="Geo Quiz">
+                        </form>
                     </div>
                     <div class="div2">
-                        <input class="button" type="submit" value="Submit">
+                        <form action="/Users" method="get">
+                            <input class="button" type="submit" value="Standings">
+                        </form>
                     </div>
-                </form>    
         </center>
     </div>
 </body>
